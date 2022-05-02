@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Login">
+   <children>
+      <Pane layoutX="215.0" layoutY="150.0" prefHeight="300.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-radius: 15; -fx-border-width: 5; -fx-background-color: lightseagreen; -fx-background-radius: 15;">
+         <children>
+            <FlowPane alignment="CENTER" layoutX="2.0" layoutY="14.0" prefHeight="56.0" prefWidth="420.0">
+               <children>
+                  <Text fx:id="textTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Management System">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" layoutX="112.0" layoutY="80.0" prefHeight="26.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="textUsername" strokeType="OUTSIDE" strokeWidth="0.0" text="username">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </FlowPane>
+            <TextField fx:id="textFieldUsername" layoutX="135.0" layoutY="106.0" />
+            <FlowPane alignment="CENTER" layoutX="112.0" layoutY="137.0" prefHeight="26.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="textPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="password">
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </FlowPane>
+            <Button fx:id="buttonLogin" layoutX="155.0" layoutY="199.0" mnemonicParsing="false" onAction="#onLoginClick" prefWidth="120.0" text="Login" />
+            <PasswordField fx:id="textFieldPassword" layoutX="135.0" layoutY="160.0" />
+            <FlowPane layoutX="5.0" layoutY="234.0" prefHeight="35.0" prefWidth="420.0" style="-fx-alignment: center;">
+               <children>
+                  <Text fx:id="textErrorMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER_RIGHT" layoutX="4.0" layoutY="269.0" prefHeight="26.0" prefWidth="420.0" style="-fx-padding: 6;">
+               <children>
+                  <Label fx:id="labelZoneId" text="ZONEID:">
+                     <font>
+                        <Font name="Arial Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

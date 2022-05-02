@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" style="-fx-background-color: teal;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddAppointment">
+   <children>
+      <Pane layoutX="10.0" layoutY="25.0" prefHeight="40.0" prefWidth="840.0" style="-fx-background-color: lightseagreen; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="30.0" layoutY="2.0" text="Add Appointment">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TableView fx:id="tableViewSchedule" layoutX="30.0" layoutY="100.0" prefHeight="200.0" prefWidth="800.0" style="-fx-background-color: cadetblue; -fx-border-color: lightseagreen; -fx-border-width: 6;">
+         <columns>
+            <TableColumn fx:id="tableColumnId" prefWidth="50.0" text="Apt. ID" />
+            <TableColumn fx:id="tableColumnTitle" prefWidth="70.0" text="Title" />
+            <TableColumn fx:id="tableColumnDescription" prefWidth="130.0" text="Description" />
+            <TableColumn fx:id="tableColumnLocation" prefWidth="90.0" text="Location" />
+            <TableColumn fx:id="tableColumnType" prefWidth="70.0" text="Type" />
+            <TableColumn fx:id="tableColumnStartTime" prefWidth="120.0" text="Start Date/Time" />
+            <TableColumn fx:id="tableColumnEndTime" prefWidth="120.0" text="End Date/Time" />
+            <TableColumn fx:id="tableColumnCustomerId" prefWidth="50.0" text="Cust. ID" />
+            <TableColumn fx:id="tableColumnUserId" prefWidth="50.0" text="User ID" />
+            <TableColumn fx:id="tableColumnContactId" prefWidth="50.0" text="Contact ID" />
+         </columns>
+      </TableView>
+      <Pane layoutX="30.0" layoutY="330.0" prefHeight="215.0" prefWidth="800.0" style="-fx-background-color: lightseagreen; -fx-background-radius: 15;">
+         <children>
+            <Text layoutX="25.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apt. ID" />
+            <Text layoutX="25.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+            <Text layoutX="25.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+            <Text layoutX="25.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+            <Text layoutX="25.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+            <TextField fx:id="textFieldId" editable="false" layoutX="120.0" layoutY="15.0" opacity="0.7" prefWidth="200.0" text="auto-generated" />
+            <TextField fx:id="textFieldTitle" layoutX="120.0" layoutY="55.0" prefWidth="200.0" />
+            <TextField fx:id="textFieldDescription" layoutX="120.0" layoutY="95.0" prefWidth="200.0" />
+            <TextField fx:id="textFieldLocation" layoutX="120.0" layoutY="135.0" prefWidth="200.0" />
+            <TextField fx:id="textFieldType" layoutX="120.0" layoutY="175.0" prefWidth="200.0" />
+            <Text layoutX="360.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" />
+            <Text layoutX="360.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer" />
+            <Text layoutX="360.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" />
+            <Text layoutX="360.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start Date/Time" />
+            <Text layoutX="360.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date/Time" />
+            <ComboBox fx:id="comboBoxContact" layoutX="460.0" layoutY="15.0" prefWidth="200.0" />
+            <ComboBox fx:id="comboBoxCustomer" layoutX="460.0" layoutY="55.0" prefWidth="200.0" />
+            <ComboBox fx:id="comboBoxUser" layoutX="460.0" layoutY="95.0" prefWidth="200.0" />
+            <ComboBox fx:id="comboBoxStartTime" layoutX="460.0" layoutY="135.0" maxWidth="90.0" prefWidth="90.0" />
+            <ComboBox fx:id="comboBoxEndTime" layoutX="460.0" layoutY="175.0" maxWidth="90.0" prefWidth="90.0" />
+            <DatePicker fx:id="datePickerStart" layoutX="560.0" layoutY="135.0" maxWidth="100.0" prefWidth="100.0" />
+            <DatePicker fx:id="datePickerEnd" layoutX="560.0" layoutY="175.0" maxWidth="100.0" prefWidth="100.0" />
+            <Text fx:id="textErrorMessage" layoutX="680.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.0" />
+            <Button layoutX="700.0" layoutY="110.0" mnemonicParsing="false" onAction="#onAddClick" prefHeight="40.0" prefWidth="70.0" text="ADD" />
+            <Button layoutX="700.0" layoutY="160.0" mnemonicParsing="false" onAction="#onCancelClick" prefHeight="40.0" prefWidth="70.0" text="CANCEL" />
+         </children></Pane>
+   </children>
+</AnchorPane>

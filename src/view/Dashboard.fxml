@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Dashboard">
+   <children>
+      <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="860.0" style="-fx-fit-to-width: true;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: teal;">
+               <children>
+                  <Button layoutX="660.0" layoutY="15.0" mnemonicParsing="false" onAction="#onRefreshClick" prefWidth="80.0" text="REFRESH" />
+                  <Button layoutX="750.0" layoutY="15.0" mnemonicParsing="false" onAction="#onLogoutClick" prefWidth="80.0" text="LOGOUT" />
+                  <Pane layoutX="230.0" layoutY="60.0" prefHeight="160.0" prefWidth="400.0" style="-fx-background-color: lightseagreen; -fx-border-color: black; -fx-padding: 15; -fx-border-width: 5;">
+                     <children>
+                        <FlowPane layoutX="4.0" layoutY="3.0" prefHeight="80.0" prefWidth="392.0" style="-fx-alignment: center;">
+                           <children>
+                              <Label fx:id="labelCurrentDatetime" text="Label">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </FlowPane>
+                        <FlowPane layoutX="8.0" layoutY="83.0" prefHeight="73.0" prefWidth="385.0" style="-fx-alignment: center;">
+                           <children>
+                              <Text fx:id="textAlertMessage" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Text>
+                           </children>
+                        </FlowPane>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="280.0" prefHeight="350.0" prefWidth="840.0">
+                     <children>
+                        <Pane layoutX="15.0" prefHeight="40.0" prefWidth="820.0" style="-fx-background-color: lightseagreen; -fx-background-radius: 15;">
+                           <children>
+                              <Label layoutX="30.0" layoutY="2.0" text="Schedule">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="textScheduleErrorMessage" fill="RED" layoutX="180.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <Button layoutX="620.0" layoutY="5.0" mnemonicParsing="false" onAction="#onScheduleAddClick" prefWidth="60.0" text="Add" />
+                              <Button layoutX="685.0" layoutY="5.0" mnemonicParsing="false" onAction="#onScheduleUpdateClick" prefWidth="60.0" text="Update" />
+                              <Button layoutX="750.0" layoutY="5.0" mnemonicParsing="false" onAction="#onScheduleDeleteClick" prefWidth="60.0" text="Delete" />
+                           </children>
+                        </Pane>
+                        <TabPane fx:id="tabPaneSchedule" layoutX="30.0" layoutY="50.0" prefHeight="300.0" prefWidth="800.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab fx:id="tabCurrentWeek" text="Current Week">
+                              <content>
+                                  <TableView fx:id="tableViewScheduleWeekly" prefHeight="280.0" prefWidth="800.0" style="-fx-background-color: cadetblue;">
+                                    <placeholder>
+                                      <Label text="Nothing scheduled for this week." />
+                                    </placeholder>
+                                    <columns>
+                                      <TableColumn fx:id="tableColumnIdWeekly" prefWidth="50.0" text="Apt. ID" />
+                                      <TableColumn fx:id="tableColumnTitleWeekly" prefWidth="50.0" text="Title" />
+                                        <TableColumn fx:id="tableColumnDescriptionWeekly" prefWidth="105.0" text="Description" />
+                                        <TableColumn fx:id="tableColumnLocationWeekly" prefWidth="85.0" text="Location" />
+                                        <TableColumn fx:id="tableColumnTypeWeekly" prefWidth="70.0" text="Type" />
+                                        <TableColumn fx:id="tableColumnStartTimeWeekly" prefWidth="120.0" text="Start Date/Time" />
+                                        <TableColumn fx:id="tableColumnEndTimeWeekly" prefWidth="120.0" text="End Date/Time" />
+                                        <TableColumn fx:id="tableColumnCustomerIdWeekly" prefWidth="50.0" text="Cust. ID" />
+                                        <TableColumn fx:id="tableColumnUserIdWeekly" prefWidth="50.0" text="User ID" />
+                                        <TableColumn fx:id="tableColumnContactIdWeekly" prefWidth="70.0" text="Contact ID" />
+                                    </columns>
+                                  </TableView>
+                              </content>
+                            </Tab>
+                            <Tab fx:id="tabCurrentMonth" text="Current Month">
+                              <content>
+                                  <TableView fx:id="tableViewScheduleMonthly" prefHeight="280.0" prefWidth="800.0" style="-fx-background-color: cadetblue;">
+                                      <placeholder>
+                                          <Label text="Nothing scheduled for this month." />
+                                      </placeholder>
+                                     <columns>
+                                        <TableColumn fx:id="tableColumnIdMonthly" prefWidth="50.0" text="Apt. ID" />
+                                        <TableColumn fx:id="tableColumnTitleMonthly" prefWidth="50.0" text="Title" />
+                                        <TableColumn fx:id="tableColumnDescriptionMonthly" prefWidth="120.0" text="Description" />
+                                        <TableColumn fx:id="tableColumnLocationMonthly" prefWidth="90.0" text="Location" />
+                                        <TableColumn fx:id="tableColumnTypeMonthly" prefWidth="70.0" text="Type" />
+                                        <TableColumn fx:id="tableColumnStartTimeMonthly" prefWidth="120.0" text="Start Date/Time" />
+                                        <TableColumn fx:id="tableColumnEndTimeMonthly" prefWidth="120.0" text="End Date/Time" />
+                                        <TableColumn fx:id="tableColumnCustomerIdMonthly" prefWidth="50.0" text="Cust. ID" />
+                                        <TableColumn fx:id="tableColumnUserIdMonthly" prefWidth="50.0" text="User ID" />
+                                        <TableColumn fx:id="tableColumnContactIdMonthly" prefWidth="50.0" text="Contact ID" />
+                                     </columns>
+                                  </TableView>
+                              </content>
+                            </Tab>
+                              <Tab fx:id="tabAllAppointments" text="All Appointments">
+                                  <content>
+                                      <TableView fx:id="tableViewScheduleAll" prefHeight="280.0" prefWidth="800.0" style="-fx-background-color: cadetblue;">
+                                          <columns>
+                                              <TableColumn fx:id="tableColumnIdAll" prefWidth="50.0" text="Apt. ID" />
+                                              <TableColumn fx:id="tableColumnTitleAll" prefWidth="50.0" text="Title" />
+                                              <TableColumn fx:id="tableColumnDescriptionAll" prefWidth="120.0" text="Description" />
+                                              <TableColumn fx:id="tableColumnLocationAll" prefWidth="90.0" text="Location" />
+                                              <TableColumn fx:id="tableColumnTypeAll" prefWidth="70.0" text="Type" />
+                                              <TableColumn fx:id="tableColumnStartTimeAll" prefWidth="120.0" text="Start Date/Time" />
+                                              <TableColumn fx:id="tableColumnEndTimeAll" prefWidth="120.0" text="End Date/Time" />
+                                              <TableColumn fx:id="tableColumnCustomerIdAll" prefWidth="50.0" text="Cust. ID" />
+                                              <TableColumn fx:id="tableColumnUserIdAll" prefWidth="50.0" text="User ID" />
+                                              <TableColumn fx:id="tableColumnContactIdAll" prefWidth="50.0" text="Contact ID" />
+                                          </columns>
+                                      </TableView>
+                                  </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="650.0" prefHeight="350.0" prefWidth="840.0">
+                     <children>
+                        <Pane prefHeight="40.0" prefWidth="820.0" style="-fx-background-color: lightseagreen; -fx-background-radius: 15;">
+                           <children>
+                              <Label layoutX="30.0" layoutY="2.0" text="Customers">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="textCustomerErrorMessage" fill="RED" layoutX="180.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <Button layoutX="620.0" layoutY="5.0" mnemonicParsing="false" onAction="#onCustomerAddClick" prefWidth="60.0" text="Add" />
+                              <Button layoutX="685.0" layoutY="5.0" mnemonicParsing="false" onAction="#onCustomerUpdateClick" prefWidth="60.0" text="Update" />
+                              <Button layoutX="750.0" layoutY="5.0" mnemonicParsing="false" onAction="#onCustomerDeleteClick" prefWidth="60.0" text="Delete" />
+                           </children>
+                        </Pane>
+                        <ScrollPane fitToHeight="true" layoutX="30.0" layoutY="50.0" prefHeight="280.0" prefWidth="800.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tableViewCustomer" prefHeight="280.0" prefWidth="800.0" style="-fx-background-color: cadetblue;">
+                                      <columns>
+                                        <TableColumn fx:id="tableColumnCustomerId" prefWidth="75.0" text="Cust. ID" />
+                                        <TableColumn fx:id="tableColumnCustomerName" prefWidth="140.0" text="Name" />
+                                          <TableColumn fx:id="tableColumnCustomerAddress" prefWidth="170.0" text="Address" />
+                                          <TableColumn fx:id="tableColumnCustomerPostalCode" prefWidth="100.0" text="Postal Code" />
+                                          <TableColumn fx:id="tableColumnCustomerPhone" prefWidth="110.0" text="Phone" />
+                                          <TableColumn fx:id="tableColumnCustomerCountry" prefWidth="100.0" text="Country" />
+                                          <TableColumn fx:id="tableColumnCustomerDivision" prefWidth="105.0" text="Division" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneReports" layoutY="1000.0" prefHeight="100.0" prefWidth="840.0">
+                     <children>
+                        <Pane prefHeight="40.0" prefWidth="820.0" style="-fx-background-color: lightseagreen; -fx-background-radius: 15;">
+                           <children>
+                              <Label layoutX="30.0" layoutY="2.0" text="Reports">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="textReportsErrorMessage" fill="RED" layoutX="146.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                              <ComboBox fx:id="comboBoxReports" layoutX="440.0" layoutY="5.0" prefWidth="300.0" />
+                              <Button layoutX="750.0" layoutY="5.0" mnemonicParsing="false" onAction="#onReportsSubmitClick" prefWidth="60.0" text="Submit" />
+                           </children>
+                        </Pane>
+                        <ScrollPane fx:id="scrollPaneReports" fitToWidth="true" layoutX="30.0" layoutY="50.0" prefHeight="230.0" prefWidth="800.0" style="visibility: false;">
+                           <content>
+                              <AnchorPane fx:id="anchorPaneReports" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </Pane>
+                  <FlowPane alignment="CENTER_RIGHT" layoutX="192.0" layoutY="2.0" prefHeight="52.0" prefWidth="457.0">
+                     <children>
+                        <Label fx:id="labelUsername" style="-fx-padding: 5;" text="Label">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
